@@ -1,35 +1,44 @@
 <head>
-  <title>proximity-server</title>
+  <title>Beacon List</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> main}}
+    <div class="container">
+        <header>
+            <h1>Beacon's registered</h1>
+            <form class="new-beacon">
+                <input type="text" name="UUID" placeholder="UUID for this device"/>
+                <input type="submit" value="Submit">
+            </form>
+        </header>
+        <table class="sortby-{{sort}}">
+            <thead>
+            <tr>
+                <th>Beek</th>
+                <th>SSID</th>
+                <th>MAC</th>
+                <th>Short name</th>
+                <th>RSSI</th>
+                <th>Last seen</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each beacons}}
+                {{> beacon}}
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
 </body>
 
-<template name="main">
-  <button>Click Me</button>
-    <p>You've pressed the button {{counter}} times.</p>
-    <p>There are {{people}} people here</p>
-
-    <table class="sortby-{{sort}}">
-        <thead>
-            <tr>
-                <th>+1</th>
-                <th>name</th>
-                <th>Date</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each people}}
-                <tr>
-                    <td>{{name}}</td>
-                    <td>{{date}}</td>
-                    <td>{{foo}}</td>
-                </tr>
-            {{/each}}
-        </tbody>
-    </table>
-
+<template name="beacon">
+    <tr>
+        <td><input type="checkbox" checked="{{is_beek}}" class="toggle-checked"/> </td>
+        <td>{{this.ssid}}</td>
+        <td>{{this.mac}}</td>
+        <td>{{name}}</td>
+        <td>{{rssi}} -dBm</td>
+        <td>{{date}}</td>
+        <td><button class="delete">Remove</button> </td>
+    </tr>
 </template>
