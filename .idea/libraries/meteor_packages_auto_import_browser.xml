@@ -52,8 +52,12 @@
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/binary-heap/1.0.4/web.browser/min-heap.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/html-tools/1.0.5/web.browser/scanner.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/binary-heap/1.0.4/web.browser/min-max-heap.js" />
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/bootstrap/1.0.1/web.browser/packages/bootstrap/css/bootstrap-responsive.css" />
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/bootstrap/1.0.1/web.browser/packages/bootstrap/css/bootstrap-override.css" />
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/bootstrap/1.0.1/web.browser/packages/bootstrap/css/bootstrap.css" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/base64/1.0.4/web.browser/base64.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/geojson-utils/1.0.4/web.browser/post.js" />
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/bootstrap/1.0.1/web.browser/packages/bootstrap.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/geojson-utils/1.0.4/web.browser/pre.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/babel-runtime/0.1.4/web.browser/babel-runtime.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/geojson-utils/1.0.4/web.browser/geojson-utils.js" />
@@ -158,8 +162,12 @@
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/binary-heap/1.0.4/web.browser/min-heap.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/html-tools/1.0.5/web.browser/scanner.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/binary-heap/1.0.4/web.browser/min-max-heap.js" />
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/bootstrap/1.0.1/web.browser/packages/bootstrap/css/bootstrap-responsive.css" />
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/bootstrap/1.0.1/web.browser/packages/bootstrap/css/bootstrap-override.css" />
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/bootstrap/1.0.1/web.browser/packages/bootstrap/css/bootstrap.css" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/base64/1.0.4/web.browser/base64.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/geojson-utils/1.0.4/web.browser/post.js" />
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/bootstrap/1.0.1/web.browser/packages/bootstrap.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/geojson-utils/1.0.4/web.browser/pre.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/babel-runtime/0.1.4/web.browser/babel-runtime.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/geojson-utils/1.0.4/web.browser/geojson-utils.js" />

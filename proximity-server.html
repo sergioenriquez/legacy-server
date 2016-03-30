@@ -1,44 +1,59 @@
 <head>
-  <title>Beacon List</title>
+    <title>Beacon List</title>
 </head>
 
 <body>
-    <div class="container">
+<div class="container">
+    <div class="row">
         <header>
-            <h1>Beacon's registered</h1>
-            <form class="new-beacon">
-                <input type="text" name="UUID" placeholder="UUID for this device"/>
-                <input type="submit" value="Submit">
-            </form>
+            <h2>Beacon's registered</h2>
         </header>
-        <table class="sortby-{{sort}}">
-            <thead>
-            <tr>
-                <th>Beek</th>
-                <th>SSID</th>
-                <th>MAC</th>
-                <th>Short name</th>
-                <th>RSSI</th>
-                <th>Last seen</th>
-            </tr>
-            </thead>
-            <tbody>
-            {{#each beacons}}
-                {{> beacon}}
-            {{/each}}
-            </tbody>
-        </table>
+        <form class="form">
+            <div class="form-group has-success has-feedback col-md-10">
+                <label for="name" class="control-label sr-only">---Name</label>
+                <input type="text" name="name" placeholder="name" id="name" class="form-control" aria-describedby="inputSuccess2Status">
+                <label for="uuid" class="control-label sr-only">UUID</label>
+                <input type="text" name="UUID" placeholder="UUID" id="uuid" class="form-control">
+                <label for="mac" class="control-label sr-only">MAC</label>
+                <input type="text" name="MAC" placeholder="MAC address" id="mac" class="form-control">
+                <span id="inputSuccess2Status" class="sr-only">(success)</span>
+            </div>
+            <input type="submit" value="Add new" class="btn-primary">
+        </form>
+        <div>
+            <table class="table-striped table-bordered col-md-12 table-condensed cf">
+                <thead>
+                <tr>
+                    <th>Beek</th>
+                    <th>UUID</th>
+                    <th>MAC</th>
+                    <th>Short name</th>
+                    <th>RSSI</th>
+                    <th>Added</th>
+                    <th>Last seen</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each beacons}}
+                    {{> beacon}}
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
     </div>
+</div>
 </body>
 
 <template name="beacon">
     <tr>
-        <td><input type="checkbox" checked="{{is_beek}}" class="toggle-checked"/> </td>
-        <td>{{this.ssid}}</td>
-        <td>{{this.mac}}</td>
+        <td style="text-align: center;"><input type="checkbox" checked="{{is_beek}}" class="toggle-checked"/> </td>
+        <td>{{uuid}}</td>
+        <td>{{mac}}</td>
         <td>{{name}}</td>
         <td>{{rssi}} -dBm</td>
-        <td>{{date}}</td>
-        <td><button class="delete">Remove</button> </td>
+        <td>{{created}}</td>
+        <td>{{lastSeen}}</td>
+        <td><button class="delete btn-danger" style="width: 100%;">Remove</button> </td>
     </tr>
 </template>
