@@ -1,0 +1,7 @@
+{
+  "env": {
+    "PORT": 27107,
+    "MONGO_URL": "mongodb://localhost:27017/appDB"
+  },
+  "MONGO_URL": "mongodb://localhost:27017/appDB"
+}

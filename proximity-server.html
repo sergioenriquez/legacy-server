@@ -1,0 +1,35 @@
+<head>
+  <title>proximity-server</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> main}}
+</body>
+
+<template name="main">
+  <button>Click Me</button>
+    <p>You've pressed the button {{counter}} times.</p>
+    <p>There are {{people}} people here</p>
+
+    <table class="sortby-{{sort}}">
+        <thead>
+            <tr>
+                <th>+1</th>
+                <th>name</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each people}}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{date}}</td>
+                    <td>{{foo}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+</template>
