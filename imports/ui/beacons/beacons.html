@@ -1,0 +1,31 @@
+<template name="Beacons">
+    {{> Nav}}
+<div class="container">
+    <header>
+        <h1>Known BLE beacons: {{beaconCount}}</h1>
+        <form class="new-beacon">
+            <input type="text" name="text" placeholder="Type here to add a new beacon" />
+        </form>
+    </header>
+
+    <table class="table-striped table-bordered col-md-12 table-condensed cf">
+        <thead>
+        <tr>
+            <th>Short name</th>
+            <th>UUID</th>
+            <th>MAC</th>
+            <th>RSSI</th>
+            <th>Created At</th>
+            <th>Last seen</th>
+            <th>BEEK</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each beacons}}
+            {{> beacon}}
+        {{/each}}
+        </tbody>
+    </table>
+</div>
+</template>

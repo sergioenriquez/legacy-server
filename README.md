@@ -1,2 +1,0 @@
-# legacy-server
-meteor test

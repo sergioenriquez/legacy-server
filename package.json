@@ -1,0 +1,13 @@
+{
+  "name": "legacy-server",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "meteor-node-stubs": "~0.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.6.5"
+  }
+}

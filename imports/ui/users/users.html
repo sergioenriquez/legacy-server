@@ -1,0 +1,37 @@
+<template name="Users">
+    {{> Nav}}
+
+    <div class="container">
+        <header>
+            <h1>Active Visitors: {{activeUserCount}}</h1>
+
+            <label class="hide-inactive">
+                <input type="checkbox" checked="{{hideCompleted}}"/>
+                Hide inactive users
+            </label>
+
+            <form class="new-user">
+                <input type="text" name="text" placeholder="Type in the new user's name" />
+            </form>
+        </header>
+
+        <table class="table-striped table-bordered col-md-12 table-condensed cf">
+            <thead>
+            <tr>
+                <th>Active</th>
+                <th>Name</th>
+                <th>Language</th>
+                <th>Demo Page</th>
+                <th>Assigned Beacon</th>
+                <th>Created At</th>
+                <th>Last Seen</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each users}}
+                {{> user}}
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

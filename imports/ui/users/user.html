@@ -1,0 +1,12 @@
+<template name="user">
+    <tr>
+        <td style="text-align: center;"><input type="checkbox" checked="{{isActive}}" class="toggle-inactive"/> </td>
+        <td>{{name}}</td>
+        <td>{{language}}</td>
+        <td>{{demoUrl}} <a href="{{demoUrl}}">visit</a></td>
+        <td>{{beacon}}</td>
+        <td>{{created}}</td>
+        <td>{{lastSeen}}</td>
+        <td><button class="delete btn-danger" style="width: 100%;">Remove</button> </td>
+    </tr>
+</template>

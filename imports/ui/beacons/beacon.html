@@ -1,0 +1,12 @@
+<template name="beacon">
+    <tr>
+        <td>{{name}}</td>
+        <td>{{uuid}}</td>
+        <td>{{mac}}</td>
+        <td>{{rssi}} -dBm</td>
+        <td>{{createdAt}}</td>
+        <td>{{lastSeen}}</td>
+        <td style="text-align: center;"><input type="checkbox" checked="{{isBeek}}" class="toggle-isBeek"/> </td>
+        <td><button class="delete btn-danger" style="width: 100%;">Remove</button> </td>
+    </tr>
+</template>
