@@ -24,3 +24,8 @@ practicalmeteor:mocha@2.1.1-rc.1
 bootstrap
 iron:router
 momentjs:moment
+meteorhacks:picker
+meteorhacks:npm
+
+
+npm-container

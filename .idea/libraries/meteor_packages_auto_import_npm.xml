@@ -244,6 +244,8 @@
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/npm-mongo/1.4.41/npm/node_modules/mongodb/dev/tools/gleak.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/npm-mongo/1.4.41/npm/node_modules/mongodb/dev/tools/test_set_runner.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/npm-mongo/1.4.41/npm/node_modules/mongodb/dev/tools/connection_proxy_emulator.js" />
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/meteorhacks_picker/1.0.3/npm/node_modules/path-to-regexp/test.js" />
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/meteorhacks_picker/1.0.3/npm/node_modules/path-to-regexp/index.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/npm-mongo/1.4.41/npm/node_modules/mongodb/index.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/babel-runtime/0.1.6/npm/node_modules/regenerator/lib/visit.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/modules-runtime/0.6.1/npm/node_modules/install/docs/public/stylesheets/normalize.css" />
@@ -513,6 +515,8 @@
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/npm-mongo/1.4.41/npm/node_modules/mongodb/dev/tools/gleak.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/npm-mongo/1.4.41/npm/node_modules/mongodb/dev/tools/test_set_runner.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/npm-mongo/1.4.41/npm/node_modules/mongodb/dev/tools/connection_proxy_emulator.js" />
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/meteorhacks_picker/1.0.3/npm/node_modules/path-to-regexp/test.js" />
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/meteorhacks_picker/1.0.3/npm/node_modules/path-to-regexp/index.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/npm-mongo/1.4.41/npm/node_modules/mongodb/index.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/babel-runtime/0.1.6/npm/node_modules/regenerator/lib/visit.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/modules-runtime/0.6.1/npm/node_modules/install/docs/public/stylesheets/normalize.css" />

@@ -4,8 +4,11 @@ import { Template } from 'meteor/templating';
 import './beacon.html';
 
 Template.beacon.helpers({
-  isOwner() {
+  isOwner(){
     return this.owner === Meteor.userId();
+  },
+  lastSeen(){
+    return  moment(this.updatedAt).fromNow();
   }
 });
 

@@ -5,17 +5,27 @@ import './main.html';
 
 import './users/users.js';
 import './beacons/beacons.js';
+import './kiosks/kiosks.js';
 
 Router.route('/', function () {
   // render the Home template with a custom data context
   this.render('Home', {data: {title: 'My Title'}});
 });
 
-// when you navigate to "/one" automatically render the template named "One".
 Router.route('/users');
 
-// when you navigate to "/two" automatically render the template named "Two".
 Router.route('/beacons');
+
+////////
+
+import { Kiosks } from '../api/kiosks.js';
+
+Router.route('/kiosks/:kioskLabel', {
+  template: 'Kiosk',
+  data: function(){
+    return Kiosks.findOne({ label: this.params.kioskLabel });
+  }
+});
 
 /**************************************************/
 

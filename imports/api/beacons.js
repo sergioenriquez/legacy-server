@@ -7,19 +7,13 @@ export const Beacons = new Mongo.Collection('beacons');
 if (Meteor.isServer) {
   // Only publish tasks that are public or belong to the current user
   Meteor.publish('beacons', function tasksPublication() {
-    return Beacons.find({
-      $or: [
-        { private: { $ne: true } },
-        { owner: this.userId }
-      ]
-    });
+    return Beacons.find();
   });
 }
 
 Meteor.methods({
   'beacons.insert'(beaconName) {
     check(beaconName, String);
-
     Beacons.insert({
       name: beaconName,
       createdAt: new Date(),
@@ -29,33 +23,17 @@ Meteor.methods({
       rssi: 0
     });
   },
-  'beacons.remove'(taskId) {
-    check(taskId, String);
-
-    const task = Beacons.findOne(taskId);
-    if (task.private && task.owner !== Meteor.userId()) {
-      // If the task is private, make sure only the owner can delete it
-      throw new Meteor.Error('not-authorized');
-    }
-
-    Beacons.remove(taskId);
+  'beacons.remove'(beaconId) {
+    check(beaconId, String);
+    Beacons.remove(beaconId);
   },
-  'beacons.setChecked'(taskId, setChecked) {
-    check(taskId, String);
-    check(setChecked, Boolean);
-
-    const task = Beacons.findOne(taskId);
-    if (task.private && task.owner !== Meteor.userId()) {
-      // If the task is private, make sure only the owner can check it off
-      throw new Meteor.Error('not-authorized');
-    }
-
-    Beacons.update(taskId, { $set: { checked: setChecked } });
-  },
-  'beacons.setBeek'(taskId, isBeek) {
-    check(taskId, String);
+  'beacons.setBeek'(beaconId, isBeek) {
+    check(beaconId, String);
     check(isBeek, Boolean);
-    const beacon = Beacons.findOne(taskId);
-    Beacons.update(taskId, { $set: { isBeek: isBeek } });
+    const beacon = Beacons.findOne(beaconId);
+    Beacons.update(beaconId, { $set: { isBeek: isBeek } });
+  },
+  'beacons.test'(beaconId) {
+    return {label: 'bob', message: beaconId};
   }
 });
