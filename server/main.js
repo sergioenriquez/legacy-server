@@ -3,6 +3,8 @@ import '../imports/api/users.js';
 import '../imports/api/kiosks.js';
 
 import { Beacons } from '../imports/api/beacons.js'
+import { Users } from '../imports/api/users.js'
+import { Kiosks } from '../imports/api/kiosks.js'
 
 // Setup the API route for receiving RSSI updates
 var bodyParser = Meteor.npmRequire( 'body-parser' );
@@ -47,5 +49,49 @@ function handleRssiReport(kioskId, eventTime, scanList){
         updatedAt: eventTime
       } } );
     }
+
+
   });
+
+  updateUserProximityStatus(kioskId);
+}
+
+function updateUserProximityStatus(kioskId, ){
+  let now = new Date();
+  let timestampRangeStart = new Date( now.getTime() - 10 * 1000);
+
+  let rssiThreshold = -75;
+  let closestBeacon = Beacons.findOne({
+    "$query":{
+      "rssi": {"$gt": rssiThreshold},
+      "updatedAt": {"$gte": timestampRangeStart}
+    },
+    "$orderby":{ "rssi": -1 }
+  });
+
+  if ( closestBeacon ){
+    console.log('closest: ' + closestBeacon.mac);
+
+    let user = Users.findOne({beacon: closestBeacon._id});
+    let userIdInFocus = null;
+    if(user){
+      userIdInFocus = user._id;
+    }
+
+    Kiosks.update({label: kioskId},
+    {
+      $set: {
+        userInFocus: userIdInFocus
+      }
+    });
+
+  } else{
+    console.log("closest: none");
+    Kiosks.update({label: kioskId},
+    {
+      $set: {
+        userInFocus: null
+      }
+    });
+  }
 }

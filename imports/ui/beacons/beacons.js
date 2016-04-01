@@ -14,7 +14,7 @@ Template.Beacons.onCreated(function bodyOnCreated() {
 
 Template.Beacons.helpers({
   beacons() {
-    return Beacons.find({}, { sort: { createdAt: -1 } });
+    return Beacons.find({}, { sort: { rssi: -1 } });
   },
   beaconCount() {
     return Beacons.find().count();

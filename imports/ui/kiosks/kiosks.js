@@ -2,18 +2,42 @@ import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 
 import { Kiosks } from '../../api/kiosks.js';
+import { Users } from '../../api/users.js';
 
 import './kiosks.html';
 
 Template.Kiosk.onCreated(function bodyOnCreated() {
   Meteor.subscribe('kiosks');
+  Meteor.subscribe('visitors');
 });
 
 Template.Kiosk.helpers({
-  kiosks() {
-    return Kiosks.find();
+  username(){
+    let visitorData = Users.findOne({_id: this.userInFocus});
+    if (visitorData == null){
+      return null;
+    }
+    return visitorData.name;
   },
-  getData(label) {
-    return Kiosks.find();
+  message(){
+    let visitorData = Users.findOne({_id: this.userInFocus});
+    if (visitorData == null){
+      return null;
+    }
+    return visitorData.customGreeting;
+  },
+  greeting(){
+    let visitorData = Users.findOne({_id: this.userInFocus});
+    if (visitorData == null){
+      return null;
+    }
+    return visitorData.language;
+  },
+  userContentUrl(){
+    let visitorData = Users.findOne({_id: this.userInFocus});
+    if (visitorData == null){
+      return null;
+    }
+    return visitorData.demoUrl;
   }
 });

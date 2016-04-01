@@ -19,11 +19,21 @@ Router.route('/beacons');
 ////////
 
 import { Kiosks } from '../api/kiosks.js';
+Router.onBeforeAction('loading');
 
 Router.route('/kiosks/:kioskLabel', {
   template: 'Kiosk',
+  waitOn: function(){
+    return Meteor.subscribe('kiosks');
+  },
   data: function(){
-    return Kiosks.findOne({ label: this.params.kioskLabel });
+    let kioskName = this.params.kioskLabel;
+    let kioskData = Kiosks.findOne({ label: kioskName});
+    if (_.isEmpty(kioskData)){
+      this.render("NotFound");
+    }else{
+      return kioskData;
+    }
   }
 });
 
@@ -33,6 +43,7 @@ Template.Home.onCreated(function helloOnCreated() {
   // counter starts at 0
   this.counter = new ReactiveVar(0);
 });
+
 
 Template.Home.helpers({
   counter() {

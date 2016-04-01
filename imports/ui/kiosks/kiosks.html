@@ -1,8 +1,15 @@
 <template name="Kiosk">
-    <div class="container">
-        <header>
-            <h1>Hello: {{label}}</h1>
-            <p>message: {{message}}</p>
-        </header>
+    <div class="container-fluid">
+        <div class="embed-responsive embed-responsive-16by9 col-xs-12 text-center">
+            {{#if username}}
+                <header>
+                    <h1>{{greeting}} {{username}}</h1>
+                    <p>{{message}}</p>
+                </header>
+                <iframe class="center-block" width="640" height="360" src="{{userContentUrl}}" frameborder="0" allowfullscreen></iframe>
+            {{else}}
+                <h2> Please place at least one beacon closer to this screen to continue </h2>
+            {{/if}}
+        </div>
     </div>
 </template>
